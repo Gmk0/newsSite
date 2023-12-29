@@ -19,16 +19,19 @@ class PostFactory extends Factory
     {
        // ['title', 'slug', 'afficher', 'type', 'lien', 'description', 'content', 'category_id', 'author'];
         return [
-            //
-            'title' => $this->faker->word,
-            'slug' => Str::slug($this->faker->sentence),
-            'afficher' => $this->faker->boolean,
-            'type' => $this->faker->randomElement(['type1', 'type2', 'type3']),
-           // 'lien' =>  $this->faker->url,
-            'description' => $this->faker->sentence,
-            'content' => $this->faker->paragraph,
-            'category_id' => $this->faker->numberBetween(1,10),
-            'author' => $this->faker->name(),
+             'title'=> $this->faker->sentence,
+            'slug' => $this->faker->slug,
+            'description' => $this->faker->paragraph,
+            'content' => $this->faker->paragraphs(3, true),
+            'author' => $this->faker->name,
+            'category_id' =>$this->faker->numberBetween(1, 4),
+            //'lien' => $this->faker->url,
+            'type' => $this->faker->word,
+            'views_count' => $this->faker->numberBetween(0, 1000),
+            'is_featured' => $this->faker->boolean,
+            'published_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
+
         ];
+
     }
 }

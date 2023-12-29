@@ -21,7 +21,10 @@ return new class extends Migration
             $table->foreignId('category_id');
             $table->json('lien')->nullable();
             $table->string('type')->nullable();
+            $table->bigInteger('views_count')->default(0);
+            $table->boolean('is_featured')->default(false);
             $table->boolean('afficher')->default(true);
+            $table->timestamp('published_at')->default(now());
             $table->timestamps();
         });
     }

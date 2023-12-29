@@ -6,10 +6,12 @@ import typography from '@tailwindcss/typography';
 export default {
     darkMode:"class",
     content: [
+        './vendor/awcodes/filament-tiptap-editor/resources/**/*.blade.php',
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './vendor/laravel/jetstream/**/*.blade.php',
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
+        "./node_modules/flowbite/**/*.js"
     ],
 
     theme: {

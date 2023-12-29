@@ -25,6 +25,8 @@ class CategoryResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('name')
                     ->required(),
+            Forms\Components\Textarea::make('description')
+                ->required(),
                 Forms\Components\Toggle::make('afficher')
                     ->required(),
             ]);

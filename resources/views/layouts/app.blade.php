@@ -16,23 +16,31 @@
 
         <!-- Styles -->
         @livewireStyles
+        <!-- Swiper CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+        <!-- Swiper JS -->
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     </head>
-    <body class="font-sans antialiased">
+    <body x-data="{open:false,isNavOpen:false}" class="font-sans antialiased" :class="{'overflow-hidden': isNavOpen}">
 
 
-        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
 
 
             @livewire('web.header')
 
+           {{-- @include('tools.header')
+--}}
             <!-- Page Content -->
-            <main>
+            <main class="pt-10 overflow-auto">
                 {{ $slot }}
             </main>
-        </div>
+
+            @livewire('web.footer')
+
 
         @stack('modals')
 
-        @livewireScripts
+        @livewireScriptConfig
     </body>
 </html>
